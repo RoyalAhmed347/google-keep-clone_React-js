@@ -1,0 +1,56 @@
+.main_box {
+  width: 350px;
+  min-height: min-content;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: auto;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.h_input {
+  width: 100%;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: Josefin, Sans;
+  border: 1px solid #feb717;
+  padding: 5px;
+  margin: 2px 0;
+}
+.h_input:focus {
+  outline: none;
+}
+.d_input {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Josefin, Sans;
+  border: 1px solid #feb717;
+  padding: 5px;
+  /* height: 150px; */
+  margin: 2px 0;
+  resize: none;
+}
+.d_input:focus {
+  outline: none;
+}
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+.icons span {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #fff;
+  color: #feb717;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.icons span:hover {
+  background-color: #feb717;
+  color: #fff;
+}

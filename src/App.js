@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./Compunent/Header";
+import CreateNote from "./Compunent/CreateNote";
+import MyNotes from "./Compunent/MyNotes";
+import Footer from "./Compunent/Footer";
 
-function App() {
+const App = () => {
+  const [notes, setNotes] = useState([]);
+
+  const addItem = (data) => {
+    setNotes((preData) => {
+      return [...preData, data];
+    });
+  };
+
+  const delitem = (id) => {
+    setNotes((preData) => {
+      return preData.filter((val, index) => {
+        return index != id;
+      });
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <CreateNote addItem={addItem} />
+      {notes.map((crutEle, index) => {
+        return (
+          <MyNotes
+            title={crutEle.title}
+            details={crutEle.details}
+            key={index}
+            id={index}
+            delitem={delitem}
+          />
+        );
+      })}
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;
